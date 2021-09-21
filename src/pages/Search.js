@@ -4,12 +4,15 @@ import MicIcon from "@material-ui/icons/Mic";
 import "./Search.css"
 import { Button } from "@material-ui/core"
 
-function Search() {
+function Search({ hideButtons }) {
     const [input, setInput] = useState("");
 
     const search = e => {
         e.preventDefault();
     }
+
+    history.pushState("/search")
+
     return (
         <div className="search">
             <div className="search_input">
