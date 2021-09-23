@@ -16,15 +16,23 @@ function Search({ hideButtons }) {
     return (
         <div className="search">
             <div className="search_input">
-                <SearchIcon className="search_inputIcon"/>
-                <input value={input} onChange={ e => setInput(e.target.value)}/>
+                <SearchIcon className="search_inputIcon" />
+                <input value={input} onChange={e => setInput(e.target.value)} />
                 <MicIcon />
             </div>
 
-            <div className="search_buttons">
-                <Button type="submit" variant="outlined" onClick={search}>Google Search</Button>
-                <Button variant="outlined">I'm feeling Luckey</Button>
-            </div>
+            {!hideButtons ? (
+                <div className="search_buttons">
+                    <Button type="submit" variant="outlined" onClick={search}>Google Search</Button>
+                    <Button variant="outlined">I'm feeling Luckey</Button>
+                </div>
+            ) : (
+                <div className="search_buttons">
+                    <Button type="submit" variant="outlined" onClick={search}>Google Search</Button>
+                    <Button variant="outlined">I'm feeling Luckey</Button>
+                </div>
+            )}
+
         </div>
     )
 }
